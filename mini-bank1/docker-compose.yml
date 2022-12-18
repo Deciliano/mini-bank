@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  mini-db:
+    image: mariadb
+    container_name: minidb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 102030
+      MYSQL_PASSWORD: 102030
+      MYSQL_DATABASE: minidb
+      MYSQL_USER: minidb
+    volumes:
+      - mini-db:/var/lib/mysql
+
+volumes:
+  mini-db:
